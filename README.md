@@ -1,4 +1,3 @@
-
 Smart Sanitation System (IoT)
 
 An IoT-based Smart Sanitation System built using Raspberry Pi Pico W to monitor hygiene conditions in real-time.
@@ -26,6 +25,60 @@ Hardware Used
 - Servo Motor
 - I2C LCD (16x2)
 - Jumper Wires and Power Supply
+
+---
+
+Step-by-Step Working
+
+1️⃣ Entry / Exit Detection
+IR sensors are placed at the entrance.
+When a person enters, the count increases.
+When a person exits, the count decreases.
+A servo motor controls the door automatically.
+This helps track usage and control access.
+
+2️⃣ Room Occupancy Monitoring
+IR sensors inside each room detect presence.
+If a person is inside, the room status is set to Occupied.
+If no person is detected, the room status is set to Available.
+Users can check availability before entering.
+
+3️⃣ Dustbin Level Monitoring
+An ultrasonic sensor measures the distance to waste.
+If the distance is small, it indicates that the bin is full.
+The system generates a cleaning alert.
+
+4️⃣ Water Level Monitoring
+An ultrasonic sensor measures the water tank level.
+If the water level is low, an alert is generated.
+This ensures water availability for users.
+
+5️⃣ Gas / Odor Detection
+A gas sensor (MQ series) detects harmful gases or bad smell.
+If the threshold exceeds, a hygiene alert is triggered.
+This improves sanitation awareness.
+
+6️⃣ LCD Display (Local Monitoring)
+The LCD displays real-time data such as:
+Entry count
+Room status
+Bin level
+Water level
+Gas level
+This helps users understand the condition before using the facility.
+
+7️⃣ Cloud Integration (ThingSpeak)
+All sensor data is sent to ThingSpeak.
+The data is visualized as graphs in real time.
+This enables remote monitoring and analysis.
+
+8️⃣ Alert System
+Alerts are generated when:
+The bin is full
+Water level is low
+Gas level is high
+Usage exceeds a defined limit
+This helps the maintenance team take timely action.
 
 ---
 
